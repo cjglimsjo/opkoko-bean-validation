@@ -8,6 +8,8 @@ import se.omegapoint.opkoko.beanvalidation.constraints.DateFormat;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -21,7 +23,10 @@ public class Order {
 
     //@NotBlank
     @DateFormat
-    private String creationDate;
+    private String stringDate;
+
+    @PastOrPresent
+    private LocalDate creationDate;
 
     @NotNull
     @Valid
